@@ -39,12 +39,23 @@ export default class Bullet extends Component{
                 color: "弹幕边框颜色"
             }
         } */
-        this.addBullets.push( Object.assign({},{
-            logo: "",
-            text: "",
-            textColor: "#000",
-            background: "transparent"
-        },bullet) );
+        if(Array.isArray(bullet)){
+            bullet.map(item=>{
+                this.addBullets.push( Object.assign({},{
+                    logo: "",
+                    text: "",
+                    textColor: "#000",
+                    background: "transparent"
+                },item) );
+            })
+        }else{
+            this.addBullets.push( Object.assign({},{
+                logo: "",
+                text: "",
+                textColor: "#000",
+                background: "transparent"
+            },bullet) );
+        } 
     }
 
     clear(){
@@ -226,7 +237,7 @@ export default class Bullet extends Component{
 
     render(){
         return (
-            <canvas style={{position:"absolute",left:"0",top:"0"}} id="myCanvas" ref={(ref)=>{this.canvas = ref;}} width="375" height="300" />
+            <canvas style={{position:"absolute",left:"0",top:"0",pointerEvents:"none"}} id="myCanvas" ref={(ref)=>{this.canvas = ref;}} width="375" height="300" />
         )
     }
 }

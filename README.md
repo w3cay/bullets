@@ -1,6 +1,8 @@
 # bullets
 弹幕组件
 
+![image](https://raw.githubusercontent.com/chelun-h5/bullets/master/doc/bullets.png)
+
 ## 安装
 
 ```
@@ -33,6 +35,17 @@ this.bullets.add({
         color: "red"
     }
 });
+//or 添加多条弹幕
+this.bullets.add([{
+    logo: "", 
+    text: "我是一条弹幕",
+    textColor: "#ffff00",
+    background: "rgba(0,0,0,0.3)",
+    border:{
+        size: 1,
+        color: "red"
+    }
+}]);
 //开始滚动
 this.bullets.start()
 //停止滚动

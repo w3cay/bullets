@@ -50,6 +50,8 @@ export default class Bullet extends Component{
     clear(){
         //清空画布
         this.setState({bullet:[]});
+        let ctx = this.ctx;
+        ctx.clearRect(0,0,this.canvasInfo.canvas.width,this.canvasInfo.canvas.height);
     }
 
     initCanvas(){ 
